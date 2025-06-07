@@ -1,3 +1,4 @@
+/* Основные стили */
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #f8f9fa, #e3e7ec);
@@ -6,31 +7,19 @@ body {
     padding: 20px;
 }
 
-h1 {
-    color: #333;
-    font-size: 26px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    animation: fadeIn 1s ease-in-out;
-}
-
+/* Адаптивные таблицы */
 table {
     width: 100%;
     max-width: 800px;
     margin: 20px auto;
     border-collapse: collapse;
-    background: #fff;
+    background: white;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
+    overflow-x: auto;
 }
 
-th, td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Стили кнопок */
+/* Улучшенные кнопки */
 .action-button, .delete-button, .report-button {
     display: inline-block;
     padding: 12px 20px;
@@ -40,31 +29,38 @@ th, td {
     font-weight: bold;
     text-decoration: none;
     border: none;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.action-button {
-    background: linear-gradient(45deg, #007bff, #0056b3);
-    color: white;
-}
-
-.delete-button {
-    background: linear-gradient(45deg, #dc3545, #a71d2a);
-    color: white;
-}
-
-.report-button {
-    background: linear-gradient(45deg, #28a745, #48c774);
-    color: white;
-}
+.action-button { background: linear-gradient(45deg, #007bff, #0056b3); color: white; }
+.delete-button { background: linear-gradient(45deg, #dc3545, #a71d2a); color: white; }
+.report-button { background: linear-gradient(45deg, #28a745, #48c774); color: white; }
 
 .action-button:hover, .delete-button:hover, .report-button:hover {
     transform: scale(1.05);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Анимация появления */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    table {
+        width: 95%;
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 22px;
+    }
+    button {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 12px;
+    }
+    th, td {
+        padding: 8px;
+    }
 }
